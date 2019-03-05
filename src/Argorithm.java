@@ -9,10 +9,24 @@ import java.util.List;
 /*
 * 문제를 풀기 위한 Class
 */
-public class NumberBaseball<T, K>{
+public class Argorithm<T, K>{
 
     private T answer;
     private K test_cases;
+
+    public T getAnswer() {
+        return answer;
+    }
+    public void setAnswer(T answer) {
+        this.answer = answer;
+    }
+    public K getTest_cases() {
+        return test_cases;
+    }
+    public void setTest_cases(K test_cases) {
+        this.test_cases = test_cases;
+    }
+
     // 3s : 질의가 답인 경우다
     // 2s : 2개씩 묶음과 나머지 한개를 임의로 생성한 것이 답이고, .
     // 2s 1b : 질의가 답인 경우다
@@ -30,18 +44,7 @@ public class NumberBaseball<T, K>{
     // 그 자리 수에 어떤 값이 들어가 있는지 알 수 있으면 좋을 것 같음.
 
 
-    public T getAnswer() {
-        return answer;
-    }
-    public void setAnswer(T answer) {
-        this.answer = answer;
-    }
-    public K getTest_cases() {
-        return test_cases;
-    }
-    public void setTest_cases(K test_cases) {
-        this.test_cases = test_cases;
-    }
+
 
     public T NumberBaseball(K test_cases) {
 

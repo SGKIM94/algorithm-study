@@ -1,11 +1,11 @@
 
 
-public class Argorithm {
+public class ArgorithmTDD {
     private String testcases;        // 문제의 testcase parameter
     private String answer;           // 문제에 대한 user의 답
 
 
-    public Argorithm() {
+    public ArgorithmTDD() {
         testcases = "";
         answer = "";
     }

@@ -1,3 +1,5 @@
 # algorithm-study
 
-for studying argorithm with java
+## 하루에 하나씩 알고리즘 공부를 위한 개인 기록
+
+

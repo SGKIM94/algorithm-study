@@ -3,10 +3,10 @@ package java.sort;
 public class LargestNumberTest {
     @Test
     public void solution() {
-        Sort2 solution7 = new Sort2();
+        LargestNumber solution = new LargestNumber();
 
 
-        String solution = solution7.solution(new int[]{303, 30});
+        String solution = solution.solution(new int[]{303, 30});
 
         System.out.println(solution);
 

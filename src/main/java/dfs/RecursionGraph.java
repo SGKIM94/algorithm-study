@@ -1,5 +1,6 @@
 package java.dfs;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class RecursionGraph {
@@ -11,22 +12,22 @@ public class RecursionGraph {
 
     public static class Graph {
         private int count;
-        private LinkedList<Integer>[] adjacent;
+        private LinkedList<ArrayList<Integer>> adjacent;
 
         Graph(int count) {
             this.count = count;
-            adjacent = new LinkedList[count];
+            adjacent = new LinkedList<>();
 
             for (int i = 0; i < count; i++) {
-                adjacent[i] = new LinkedList<>();
+                adjacent.add(new ArrayList<>());
             }
         }
 
         void dfs(int index, boolean[] visited) {
             visited[index] = true;
 
-            for (int i = 0; i < adjacent.length; i++) {
-                Integer node = adjacent[index].get(i);
+            for (int i = 0; i < adjacent.size(); i++) {
+                Integer node = adjacent.get(index).get(i);
 
                 if (!visited[node]) {
                     dfs(node, visited);

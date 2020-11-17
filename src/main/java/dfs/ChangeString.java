@@ -23,7 +23,7 @@ public class ChangeString {
             return 0;
         }
 
-        findTarget(begin, words, visited, 0, 0);
+        findTarget(begin, words, visited, 0);
 
         if (answers.isEmpty()) {
             return 0;
@@ -32,7 +32,7 @@ public class ChangeString {
         return Collections.min(answers);
     }
 
-    void findTarget(String word, String[] words, boolean[] visited, int depth, int index) {
+    void findTarget(String word, String[] words, boolean[] visited, int depth) {
         int wordsSize = words.length;
 
         if (word.equals(targetWord)) {
@@ -40,19 +40,13 @@ public class ChangeString {
             return;
         }
 
-        if (wordsSize == depth) {
-            return;
-        }
-
         for (int i = 0; i < wordsSize; i++) {
             String currentWord = words[i];
 
-            if (isDifferentOnlyOneWord(currentWord, word)) {
-                depth += 1;
-                visited[depth] = true;
-                findTarget(currentWord, words, visited, depth, i);
-                depth -= 1;
-                visited[depth] = false;
+            if (!visited[i] && isDifferentOnlyOneWord(currentWord, word)) {
+                visited[i] = true;
+                findTarget(currentWord, words, visited, depth + 1);
+                visited[i] = false;
             }
         }
     }

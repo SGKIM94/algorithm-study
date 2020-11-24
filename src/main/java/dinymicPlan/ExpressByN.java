@@ -16,12 +16,7 @@ public class ExpressByN {
             source = N;
             target = number;
 
-            String ofSource = String.valueOf(source);
-            for (int i = 0; i < 8; i++) {
-                countExpressTargetBySource(Long.parseLong(ofSource), i);
-                ofSource += ofSource;
-            }
-
+            countExpressTargetBySource(0, 0);
 
             if (answers.size() == 0) {
                 return -1;
@@ -30,7 +25,7 @@ public class ExpressByN {
             return Collections.min(answers);
         }
 
-        public void countExpressTargetBySource(long result, int count) {
+        public void countExpressTargetBySource(int result, int count) {
             if (count > 8) {
                 return;
             }
@@ -40,13 +35,19 @@ public class ExpressByN {
                 return;
             }
 
+            String ofSource = String.valueOf(source);
 
-            int next = count + 1;
+            for (int i = 0; i < 8; i++) {
+                int currentSource = Integer.parseInt(ofSource);
+                int next = count + i + 1;
 
-            countExpressTargetBySource(result + source, next);
-            countExpressTargetBySource(result - source, next);
-            countExpressTargetBySource(result * source, next);
-            countExpressTargetBySource(result / source, next);
+                countExpressTargetBySource(result + currentSource, next);
+                countExpressTargetBySource(result - currentSource, next);
+                countExpressTargetBySource(result * currentSource, next);
+                countExpressTargetBySource(result / currentSource, next);
+
+                ofSource = ofSource + source;
+            }
         }
     }
 

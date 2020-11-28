@@ -53,47 +53,14 @@ public class ExpressByN {
 
 
     class Solution2 {
-        HashSet<Integer> check = new HashSet<Integer>();
+        HashSet<Integer> check = new HashSet<>();
         ArrayList<Integer>[] cache = new ArrayList[9];
 
-        public int add(int left, int right) {
-            return left + right;
-        }
-
-        public int sub(int left, int right) {
-            return left - right;
-        }
-
-        public int mul(int left, int right) {
-            return left * right;
-        }
-
-        public int div(int left, int right) {
-            if (right == 0) return 0;
-            return left / right;
-        }
-
-        public void addCache(int digit, int ret) {
-            if (!check.contains(ret)) {
-                check.add(ret);
-                cache[digit].add(ret);
-            }
-        }
-
-        public void cal(int digit, int left, int right) {
-            addCache(digit, add(left, right));
-            addCache(digit, sub(left, right));
-            addCache(digit, mul(left, right));
-            addCache(digit, div(left, right));
-        }
-
-
         public int solution(int N, int number) {
-
             int temp = N;
             for (int i = 1; i < 9; i++) {
                 if (temp == number) return i;
-                cache[i] = new ArrayList<Integer>();
+                cache[i] = new ArrayList<>();
                 cache[i].add(temp);
                 check.add(temp);
                 temp *= 10;
@@ -114,6 +81,37 @@ public class ExpressByN {
                 }
             }
             return -1;
+        }
+
+        public void addCache(int digit, int ret) {
+            if (!check.contains(ret)) {
+                check.add(ret);
+                cache[digit].add(ret);
+            }
+        }
+
+        public void cal(int digit, int left, int right) {
+            addCache(digit, add(left, right));
+            addCache(digit, sub(left, right));
+            addCache(digit, mul(left, right));
+            addCache(digit, div(left, right));
+        }
+
+        public int add(int left, int right) {
+            return left + right;
+        }
+
+        public int sub(int left, int right) {
+            return left - right;
+        }
+
+        public int mul(int left, int right) {
+            return left * right;
+        }
+
+        public int div(int left, int right) {
+            if (right == 0) return 0;
+            return left / right;
         }
     }
 }

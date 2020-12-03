@@ -1,9 +1,7 @@
-package java.search;
-
-import java.util.List;
+package java.search.binary;
 
 public class BinarySearch {
-    public List<Integer> solution(int[] arr, int iKey) {
+    public int solution(int[] arr, int iKey) {
         int mid;
         int left = 0;
         int right = arr.length - 1;

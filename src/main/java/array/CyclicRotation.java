@@ -1,4 +1,4 @@
-package java.unknown;
+package java.array;
 
 public class CyclicRotation {
     class Solution {

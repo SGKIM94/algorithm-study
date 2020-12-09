@@ -6,10 +6,10 @@ public class FlogJump {
             return 0;
         }
 
-        int BetwwenXAndY = Y - X;
-        int minOfJump = BetwwenXAndY / D;
+        int BetweenXAndY = Y - X;
+        int minOfJump = BetweenXAndY / D;
 
-        if (BetwwenXAndY % D == 0) {
+        if (BetweenXAndY % D == 0) {
             return minOfJump;
         }
         return minOfJump + 1;

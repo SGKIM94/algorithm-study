@@ -3,8 +3,13 @@ package java.set;
 import java.util.HashSet;
 import java.util.Set;
 
-// you can also use imports, for example:
 
+/**
+ * codility
+ * Counting Elements
+ * MaxCounters
+ * level : easy
+ */
 class FrogRiverOne {
     public int solution(int X, int[] A) {
         int sizeOfPositions = A.length;

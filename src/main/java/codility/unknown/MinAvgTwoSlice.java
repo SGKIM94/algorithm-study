@@ -1,4 +1,4 @@
-package java.unknown;
+package java.codility.unknown;
 
 /**
  * codility

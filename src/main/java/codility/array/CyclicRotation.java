@@ -1,4 +1,4 @@
-package java.array;
+package java.codility.array;
 
 public class CyclicRotation {
     class Solution {

@@ -1,4 +1,4 @@
-package java.complexity;
+package java.codility.complexity;
 
 import java.util.ArrayList;
 import java.util.Collections;

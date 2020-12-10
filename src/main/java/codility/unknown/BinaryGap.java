@@ -1,4 +1,4 @@
-package java.search;
+package java.codility.unknown;
 
 import java.util.ArrayList;
 import java.util.List;

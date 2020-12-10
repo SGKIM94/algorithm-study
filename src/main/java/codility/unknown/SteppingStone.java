@@ -1,4 +1,4 @@
-package java.search.binary;
+package java.codility.unknown;
 
 import java.util.Arrays;
 

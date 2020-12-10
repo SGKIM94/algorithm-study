@@ -1,4 +1,4 @@
-package java.complexity;
+package java.codility.complexity;
 
 public class FlogJump {
     public int solution(int X, int Y, int D) {

@@ -1,4 +1,4 @@
-package java.unknown;
+package java.codility.unknown;
 
 import java.util.Arrays;
 

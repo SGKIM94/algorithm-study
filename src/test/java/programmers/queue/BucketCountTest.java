@@ -1,4 +1,4 @@
-package java.queue;
+package java.programmers.queue;
 
 public class BucketCountTest {
     @Test

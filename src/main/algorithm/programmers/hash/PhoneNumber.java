@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 프로그래머스
+ * Hash
+ * level : 2
+ * startWith, indexOf 로 앞에 위치한 값을 검사할 수 있다.
+ */
+
 public class PhoneNumber {
     public boolean solution(String[] phone_book) {
         int sizeOfPhoneBook = phone_book.length;

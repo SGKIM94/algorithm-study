@@ -4,21 +4,22 @@ import java.util.Arrays;
 
 public class Maraton {
     public String solution(String[] participant, String[] completion) {
-        int participantSize = participant.length;
-
         Arrays.sort(participant);
         Arrays.sort(completion);
 
-        for (int i = 0; i < participantSize; i++) {
-            if (i == participantSize - 1) {
-                return participant[i];
+        int sizeOfParticipant = participant.length;
+        for (int i = 0; i < sizeOfParticipant; i++) {
+            String person = participant[i];
+
+            if (i == sizeOfParticipant - 1) {
+                return person;
             }
 
-            if (!participant[i].equals(completion[i])) {
-                return participant[i];
+            if (!person.equals(completion[i])) {
+                return person;
             }
         }
 
-        return "wrong";
+        throw new RuntimeException();
     }
 }

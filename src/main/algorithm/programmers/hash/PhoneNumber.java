@@ -1,8 +1,6 @@
 package algorithm.programmers.hash;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * 프로그래머스
@@ -21,18 +19,16 @@ public class PhoneNumber {
 
         Arrays.sort(phone_book);
 
-        List<String> phones = new ArrayList<>();
-
-        phones.add(phone_book[0]);
-
-        for (int i = 1; i < sizeOfPhoneBook; i++) {
+        for (int i = 0; i < sizeOfPhoneBook; i++) {
             String phone = phone_book[i];
-            if (phones.indexOf(phone) == 0) {
-                return false;
+
+            for (int j = i + 1; j < sizeOfPhoneBook; j++) {
+                if (phone_book[j].startsWith(phone)) {
+                    return false;
+                }
             }
         }
 
         return true;
     }
-
 }

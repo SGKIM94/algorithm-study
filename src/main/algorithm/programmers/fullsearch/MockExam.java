@@ -3,6 +3,12 @@ package algorithm.programmers.fullsearch;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 프로그래머스
+ * 완전탐색
+ * MockExam
+ * level : 1단계
+ */
 public class MockExam {
     public int[] solution(int[] answers) {
         int[] first = {1, 2, 3, 4, 5};

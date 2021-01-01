@@ -2,40 +2,15 @@ package algorithm.programmers.queue.re;
 
 import java.util.Stack;
 
+/**
+ * 프로그래머스
+ * Stack and Queue
+ * 주식가격
+ * level : 1단계
+ * Stack / Queue 를 구현 할 때는 클래스 구현을 심히 고민
+ */
+
 public class StockPrice {
-    public int[] solution(int[] prices) {
-        int sizeOfPrices = prices.length;
-        int[] answers = new int[sizeOfPrices];
-
-        if (sizeOfPrices == 2) {
-            if (prices[0] > prices[1]) {
-                return new int[]{1, 0};
-            }
-
-            return new int[]{0, 0};
-        }
-
-        int second = 1;
-        Stack<Integer> periodOfStockUp = new Stack<>();
-
-        for (int i = 1; i < sizeOfPrices; i++) {
-            periodOfStockUp.push(second);
-            second++;
-
-            if (prices[i] < prices[i - 1]) {
-                for (int j = i; periodOfStockUp.isEmpty() && prices[j] > prices[i]; j--) {
-                    periodOfStockUp.pop();
-                }
-            }
-        }
-
-        for (int i = 0; i < periodOfStockUp.size(); i++) {
-            answers[i] = periodOfStockUp.pop();
-        }
-
-        return answers;
-    }
-
     public int[] solution2(int[] prices) {
         int sizeOfPrices = prices.length;
         int[] answers = new int [prices.length];

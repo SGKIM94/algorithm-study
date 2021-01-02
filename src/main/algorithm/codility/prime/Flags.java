@@ -6,8 +6,7 @@ import java.util.List;
 /**
  * codility
  * Prime and composite numbers
- * Flags
- * level : medium
+ * Flags * level : medium
  * https://sustainable-dev.tistory.com/29
  * 문제에 대한 이해 부족
  * 반갑법(bisection) 찾아보기

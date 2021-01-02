@@ -1,4 +1,4 @@
-package algorithm.programmers.queue.re;
+package algorithm.programmers.stack.re;
 
 import java.util.Stack;
 
@@ -11,7 +11,7 @@ import java.util.Stack;
  */
 
 public class StockPrice {
-    public int[] solution2(int[] prices) {
+    public int[] solution(int[] prices) {
         int sizeOfPrices = prices.length;
         int[] answers = new int [prices.length];
 

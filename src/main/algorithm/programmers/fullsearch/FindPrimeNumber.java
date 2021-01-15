@@ -1,7 +1,7 @@
 package algorithm.programmers.fullsearch;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 프로그래머스
@@ -11,23 +11,18 @@ import java.util.List;
  */
 public class FindPrimeNumber {
     public int solution(String numbers) {
-        int answer = 0;
-
         String [] splitNumbers = numbers.split("");
 
         int numbersSize = splitNumbers.length;
 
-        List<Integer> checkedNumber = new ArrayList<>();
+        Set<Integer> checkedNumber = new HashSet<>();
 
         for (int i = 0; i < numbersSize; i++) {
             StringBuilder number = new StringBuilder(splitNumbers[i]);
 
-            if (!checkedNumber.contains(Integer.parseInt(number.toString()))
-                    && isPrime(Integer.parseInt(number.toString()))) {
-                answer++;
+            if (isPrime(Integer.parseInt(number.toString()))) {
+                checkedNumber.add(Integer.parseInt(number.toString()));
             }
-
-            checkedNumber.add(Integer.parseInt(number.toString()));
 
             for (int j = 0; j < numbersSize; j++) {
                 if (i == j) {
@@ -36,19 +31,16 @@ public class FindPrimeNumber {
 
                 number.append(splitNumbers[j]);
 
-                if (!checkedNumber.contains(Integer.parseInt(number.toString()))
-                        && isPrime(Integer.parseInt(number.toString()))) {
-                    answer++;
+                if (isPrime(Integer.parseInt(number.toString()))) {
+                    checkedNumber.add(Integer.parseInt(number.toString()));
                 }
-
-                checkedNumber.add(Integer.parseInt(number.toString()));
             }
         }
 
-        return answer;
+        return checkedNumber.size();
     }
 
-    public boolean isPrime(int number) {
+    private boolean isPrime(int number) {
 
         if (number <= 1) {
             return false;
@@ -66,5 +58,4 @@ public class FindPrimeNumber {
 
         return true;
     }
-
 }

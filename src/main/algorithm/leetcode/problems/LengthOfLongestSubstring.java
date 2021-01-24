@@ -7,9 +7,10 @@ import java.util.List;
  * leetcode
  * LengthOfLongestSubstring
  * level : medium
+ * subList 를 해주지 않아 dvdf 같은 케이스를 통과 못한 부분 수정
  */
 public class LengthOfLongestSubstring {
-    public int lengthOfLongestSubstring(String s) {
+    public static int solution(String s) {
         if ("".equals(s)) {
             return 0;
         }
@@ -26,16 +27,17 @@ public class LengthOfLongestSubstring {
         for (String string : strings) {
             if (current.contains(string)) {
                 int currentLength = current.size();
-                current = new ArrayList<>();
+                int index = current.indexOf(string);
+                current = current.subList(index + 1, currentLength);
+
                 if (longest < currentLength) {
                     longest = currentLength;
                 }
-                continue;
             }
 
             current.add(string);
         }
 
-        return longest;
+        return Math.max(current.size(), longest);
     }
 }

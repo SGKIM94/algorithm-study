@@ -16,9 +16,13 @@ public class StringToIntegerAtoi {
         boolean isPositive = true;
         if (step1.startsWith("-")) {
             isPositive = false;
-            step1 = step1.replaceFirst("-", "");
+            step1 = step1.replace("-", "");
         } else if (step1.startsWith("+")) {
-            step1 = step1.replaceFirst("+", "");
+            step1 = step1.replace("+", "");
+        }
+
+        if ("".equals(step1)) {
+            return 0;
         }
 
         String[] words = step1.split("");

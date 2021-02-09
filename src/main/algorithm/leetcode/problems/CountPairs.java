@@ -44,6 +44,12 @@ public class CountPairs {
 
     private static int[] twoSquare = new int[]{1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824};
 
+    /**
+     * O(N)
+     * https://leetcode.com/problems/count-good-meals/discuss/999436/Java-O(n)-HashMap-Solution-Two-Sum-Variation
+     * @param deliciousness
+     * @return
+     */
     public static int countPairsAnswer(int[] deliciousness) {
         Map<Integer, Integer> pairs = new HashMap<>();
 
@@ -62,5 +68,27 @@ public class CountPairs {
         }
 
         return answer;
+    }
+
+    /**
+     * O(N)
+     * @param deliciousness
+     * @return
+     */
+    public int countPairsAnswerSecond(int[] deliciousness) {
+        Map<Integer, Integer> map = new HashMap<>(); // key: num, val: ocurrence
+        int length = deliciousness.length, answer = 0, MOD = 1000000007;
+        for (int num : deliciousness) {
+            int sum = 1;
+            for (int i = 0; i <= 21; i++) {// 21 because 2^20 + 2^20 = 2^21, this is largest sum we can obtain in this problem.
+                if (sum >= num && map.containsKey(sum - num)) {
+                    answer += map.get(sum - num);
+                    answer %= MOD;
+                }
+                sum *= 2;
+            }
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        return (int)answer;
     }
 }

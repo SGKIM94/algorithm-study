@@ -30,4 +30,12 @@ public class LongestPalindromicSubstringTest {
         assertEquals(answer, "bb");
     }
 
+    @Test
+    public void longestPalindrome_fourth() {
+        LongestPalindromicSubstring solution = new LongestPalindromicSubstring();
+        String answer = solution.longestPalindrome("aacabdkacaa");
+
+        assertEquals(answer, "aca");
+    }
+
 }

@@ -51,4 +51,23 @@ public class StringToIntegerAtoiTest {
 
         assertEquals(answer, 0);
     }
+
+    @Test
+    public void myAtoi_sixth() {
+        StringToIntegerAtoi solution = new StringToIntegerAtoi();
+
+        int answer = solution.myAtoi("+");
+
+        assertEquals(answer, 0);
+    }
+
+    @Test
+    public void myAtoi_seven() {
+        StringToIntegerAtoi solution = new StringToIntegerAtoi();
+
+        int answer = solution.myAtoi("   +0 123");
+
+        assertEquals(answer, 0);
+    }
+
 }

@@ -1,7 +1,7 @@
 package algorithm.programmers.dinymicPlan;
 
 public class SteelMoney {
-    class Solution {
+    static class Solution {
         public int solution(int[] money) {
             int countOfHouse = money.length;
 

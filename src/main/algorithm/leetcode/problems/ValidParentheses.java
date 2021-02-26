@@ -12,12 +12,23 @@ public class ValidParentheses {
     public boolean isValid(String s) {
 
         String[] parentheses = s.split("");
+
+        if (parentheses.length <= 1) {
+            return false;
+        }
+
         Stack<String> stack = new Stack<>();
+
 
         for (String parenthese : parentheses) {
             if (parenthese.equals("(") || parenthese.equals("{") || parenthese.equals("[")) {
                 stack.push(parenthese);
                 continue;
+            }
+
+            if ((parenthese.equals(")") || parenthese.equals("]") || parenthese.equals("}"))
+                    && stack.size() == 0) {
+                return false;
             }
 
             if (parenthese.equals(")") && stack.peek().equals("(")) {
@@ -26,11 +37,10 @@ public class ValidParentheses {
                 stack.pop();
             } else if (parenthese.equals("}") && stack.peek().equals("{")) {
                 stack.pop();
+            } else {
+                return false;
             }
-
-            return false;
         }
 
         return stack.empty();
-    }
-}
+    }}

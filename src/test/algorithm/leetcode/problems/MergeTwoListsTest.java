@@ -2,6 +2,9 @@ package algorithm.leetcode.problems;
 
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
 public class MergeTwoListsTest {
 
     @Test
@@ -9,6 +12,6 @@ public class MergeTwoListsTest {
         MergeTwoLists mergeTwoLists = new MergeTwoLists();
         MergeTwoLists.ListNode answer = mergeTwoLists.mergeTwoLists(new MergeTwoLists.ListNode(1), new MergeTwoLists.ListNode(2));
 
-        assertThat(answer).isEqualTo(3);
+        assertThat(answer, is(3));
     }
 }

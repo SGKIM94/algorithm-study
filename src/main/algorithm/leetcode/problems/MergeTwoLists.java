@@ -44,5 +44,4 @@ public class MergeTwoLists {
             this.next = next;
         }
     }
-
 }
